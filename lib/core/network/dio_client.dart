@@ -10,7 +10,7 @@ class DioClient {
     BaseOptions(
       baseUrl: 'https://dummyjson.com',
       connectTimeout:
-      const Duration(milliseconds: 100),
+      const Duration(seconds: 10),
       receiveTimeout:
       const Duration(seconds: 10),
       sendTimeout:

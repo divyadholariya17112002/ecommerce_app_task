@@ -174,7 +174,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(
         state.copyWith(
           status: ProductStatus.failure,
-          errorMessage: 'Search failed',
+          errorMessage: _getErrorMessage(e),
         ),
       );
     }

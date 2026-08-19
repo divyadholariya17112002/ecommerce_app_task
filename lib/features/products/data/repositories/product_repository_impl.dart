@@ -63,13 +63,17 @@ class ProductRepositoryImpl implements ProductRepository {
     required int limit,
     required int skip,
   }) async {
-    final response =
-    await remoteDataSource.searchProducts(
-      query: query,
-      limit: limit,
-      skip: skip,
-    );
+    try {
+      final response =
+      await remoteDataSource.searchProducts(
+        query: query,
+        limit: limit,
+        skip: skip,
+      );
 
-    return response.products;
+      return response.products;
+    } catch (e) {
+      rethrow;
+    }
   }
 }
